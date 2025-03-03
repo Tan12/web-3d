@@ -1,0 +1,12 @@
+diff --git a/Source/Renderer/createUniform.js b/Source/Renderer/createUniform.js
+index 912c11d9d2e87d1254fea6dd6550eb938ad5a0dd..95a81cb141ee2489fa77858c3ce7d1ee6ec73037 100644
+--- a/Source/Renderer/createUniform.js
++++ b/Source/Renderer/createUniform.js
+@@ -25,6 +25,7 @@ function createUniform(gl, activeUniform, uniformName, location) {
+       return new UniformFloatVec4(gl, activeUniform, uniformName, location);
+     case gl.SAMPLER_2D:
+     case gl.SAMPLER_CUBE:
++    case gl.SAMPLER_3D:
+       return new UniformSampler(gl, activeUniform, uniformName, location);
+     case gl.INT:
+     case gl.BOOL:
