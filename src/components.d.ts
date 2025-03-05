@@ -8,7 +8,9 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BaseHeader: typeof import('./components/layouts/BaseHeader.vue')['default']
+    BaseLayout: typeof import('./components/layouts/BaseLayout.vue')['default']
     BaseSide: typeof import('./components/layouts/BaseSide.vue')['default']
+    copy: typeof import('./components/layouts/BaseHeader copy.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElDatePicker: typeof import('element-plus/es')['ElDatePicker']

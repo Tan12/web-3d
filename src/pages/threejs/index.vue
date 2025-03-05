@@ -1,5 +1,5 @@
 <template>
   <div>
-    Navigation 4
+    threejs demos
   </div>
 </template>

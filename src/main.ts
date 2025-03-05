@@ -1,5 +1,5 @@
 import type { UserModule } from './types'
-import { ViteSSG } from 'vite-ssg'
+import { setupLayouts } from 'virtual:generated-layouts'
 
 // import "~/styles/element/index.scss";
 
@@ -9,6 +9,7 @@ import { ViteSSG } from 'vite-ssg'
 
 // or use cdn, uncomment cdn link in `index.html`
 
+import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto-routes'
 import App from './App.vue'
 
@@ -34,7 +35,7 @@ import 'element-plus/theme-chalk/src/message-box.scss'
 export const createApp = ViteSSG(
   App,
   {
-    routes,
+    routes: setupLayouts(routes),
     base: import.meta.env.BASE_URL,
   },
   (ctx) => {
@@ -44,3 +45,6 @@ export const createApp = ViteSSG(
     // ctx.app.use(Previewer)
   },
 )
+
+// 导出路由配置
+export { routes }

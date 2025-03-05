@@ -42,6 +42,7 @@
     "unplugin-vue-router": "^0.10.9",
     "vite": "^6.0.3",
     "vite-plugin-cesium": "^1.2.23",
+    "vite-plugin-vue-layouts": "^0.11.0",
     "vite-ssg": "^0.24.2",
     "vue-tsc": "^2.1.10"
   },

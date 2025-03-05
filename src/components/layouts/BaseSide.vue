@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+import { Setting } from '@element-plus/icons-vue'
+
+// const isCollapse = ref(true)
+function handleOpen(key: string, keyPath: string[]) {
+  console.log(key, keyPath)
+}
+function handleClose(key: string, keyPath: string[]) {
+  console.log(key, keyPath)
+}
+</script>
+
 <template>
   <el-menu
     router
@@ -15,24 +27,10 @@
       </template>
       <el-menu-item index="/cesium/volume-rendering/cloud">
         体积云
-        </el-menu-item>
+      </el-menu-item>
       <el-menu-item index="/cesium/volume-rendering/perlin">
         柏林噪声
-        </el-menu-item>
+      </el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>
-
-<script lang="ts" setup>
-import { Setting } from '@element-plus/icons-vue'
-
-// const isCollapse = ref(true)
-function handleOpen(key: string, keyPath: string[]) {
-  // eslint-disable-next-line no-console
-  console.log(key, keyPath)
-}
-function handleClose(key: string, keyPath: string[]) {
-  // eslint-disable-next-line no-console
-  console.log(key, keyPath)
-}
-</script>

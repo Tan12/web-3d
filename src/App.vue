@@ -1,11 +1,12 @@
 <template>
   <el-config-provider namespace="ep">
     <BaseHeader />
-    <div class="main-container flex">
-      <BaseSide />
+    <div class="main-container">
+      <RouterView />
+      <!-- <BaseSide />
       <div w="full">
         <RouterView />
-      </div>
+      </div> -->
     </div>
   </el-config-provider>
 </template>

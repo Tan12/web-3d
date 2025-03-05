@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import { repository } from '~/../package.json'
+import { toggleDark } from '~/composables'
+</script>
+
 <template>
   <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" router>
     <el-menu-item index="/">
@@ -6,7 +11,7 @@
         <span>Awesome</span>
       </div>
     </el-menu-item>
-    <el-menu-item index="/cesium" >
+    <el-menu-item index="/cesium">
       Cesium Demos
     </el-menu-item>
     <el-menu-item index="/three">
@@ -29,11 +34,6 @@
     </el-menu-item>
   </el-menu>
 </template>
-
-<script lang="ts" setup>
-import { repository } from '~/../package.json'
-import { toggleDark } from '~/composables'
-</script>
 
 <style lang="scss">
 .el-menu-demo {

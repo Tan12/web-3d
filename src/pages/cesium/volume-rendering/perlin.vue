@@ -1,18 +1,8 @@
-<template>
-  <div id="perlin-map"
-       ref="$map"
-       class="full-wrap">
-    <div v-show="!isSupport"
-         class="no-support fs-16">
-      对不起，您的浏览器不支持WebGL!
-    </div>
-  </div>
-</template>
 <script lang="ts" setup>
-import { isSupportWebGL } from '~/utils'
+import * as Cesium from 'cesium'
 import GUI from 'lil-gui'
 import { onMounted, ref } from 'vue'
-import * as Cesium from 'cesium'
+import { isSupportWebGL } from '~/utils'
 import { CustomPrimitive, generateData } from './data/perlin'
 
 const isSupport = isSupportWebGL()
@@ -25,14 +15,14 @@ const geometry = Cesium.BoxGeometry.fromDimensions({
 })
 const primitive_modelMatrix = Cesium.Matrix4.multiplyByTranslation(
   Cesium.Transforms.eastNorthUpToFixedFrame(
-    Cesium.Cartesian3.fromDegrees(124.21936679679918, 45.85136872098397)
+    Cesium.Cartesian3.fromDegrees(124.21936679679918, 45.85136872098397),
   ),
   new Cesium.Cartesian3(0.0, 0.0, 80.0),
-  new Cesium.Matrix4()
+  new Cesium.Matrix4(),
 )
 const customPrimitive = new CustomPrimitive({
   modelMatrix: primitive_modelMatrix,
-  geometry: geometry,
+  geometry,
   data: generateData(),
   dim: dim_temp,
 })
@@ -44,7 +34,7 @@ onMounted(() => {
   }
 })
 
-function initMap () {
+function initMap() {
   // Cesium.Ion.defaultAccessToken = ''
   const viewer = new Cesium.Viewer('perlin-map', {
     infoBox: false,
@@ -89,13 +79,13 @@ function initMap () {
 /**
  * 初始化图元
  */
-function initPrimitive (viewer:Cesium.Viewer) {
+function initPrimitive(viewer: Cesium.Viewer) {
   viewer.scene.primitives.add(customPrimitive)
   viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(
       124.21936679679918,
       45.85136872098397,
-      80.0
+      80.0,
     ),
     box: {
       dimensions: dim_temp,
@@ -109,16 +99,16 @@ function initPrimitive (viewer:Cesium.Viewer) {
     Cesium.Cartesian3.fromDegrees(
       124.21936679679918,
       45.85136872098397,
-      80
+      80,
     ),
-    new Cesium.Cartesian3(2, 2, 2)
+    new Cesium.Cartesian3(2, 2, 2),
   )
 }
 
 /**
  * 初始化GUI组件
  */
-function initGUI () {
+function initGUI() {
   const gui = new GUI({
     container: $map.value,
     title: '参数控制器',
@@ -128,17 +118,39 @@ function initGUI () {
   gui.add(customPrimitive.viewModel, 'steps', 0, 300, 1).onChange(updateValue)
 }
 
-function updateValue (data:any) {
+function updateValue(data: any) {
   console.log('updateValue', data, customPrimitive.viewModel)
 }
 </script>
+
+<template>
+  <div
+    id="perlin-map"
+    ref="$map"
+    class="full-wrap"
+  >
+    <div
+      v-show="!isSupport"
+      class="no-support fs-16"
+    >
+      对不起，您的浏览器不支持WebGL!
+    </div>
+  </div>
+</template>
+
+<route lang="yaml">
+  meta:
+    title: 体积云
+  layout: default
+</route>
+
 <style lang="scss" scoped>
 .full-wrap {
   width: 100%;
   height: 100%;
   position: relative;
 }
-:deep(.lil-gui){
+:deep(.lil-gui) {
   top: 110px;
   right: 10px;
   position: absolute;
@@ -147,6 +159,6 @@ function updateValue (data:any) {
   --title-text-color: #333;
   --title-background-color: #eee;
   --background-color: #fff;
-	--widget-color: #c7c7c7;
+  --widget-color: #c7c7c7;
 }
 </style>

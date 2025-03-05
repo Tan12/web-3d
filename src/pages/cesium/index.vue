@@ -1,11 +1,14 @@
 <template>
-  <div py="4">
-    一些关于cesium的demo
+  <div>
+    cesium demos
   </div>
 </template>
 
-<script lang="ts" setup>
-</script>
+<route lang="yaml">
+  meta:
+    title: Cesium
+  layout: default
+</route>
 
 <style type="scss" scoped>
 </style>
