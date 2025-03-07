@@ -1,9 +1,6 @@
 <template>
-  <div class="content flex">
-    <BaseSide />
-    <div w="full">
-      <RouterView />
-    </div>
+  <div class="content">
+    <RouterView />
   </div>
 </template>
 

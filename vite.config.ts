@@ -2,6 +2,7 @@ import path from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 
 import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import VueRouter from 'unplugin-vue-router/vite'
@@ -38,6 +39,10 @@ export default defineConfig({
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     ViteVueLayouts(),
     Vue(),
+    AutoImport({
+      imports: ['vue', 'vue-router', 'pinia'],
+      dts: 'src/auto-imports.d.ts',
+    }),
     cesium(),
 
     Components({

@@ -14,7 +14,7 @@ import { toggleDark } from '~/composables'
     <el-menu-item index="/cesium">
       Cesium Demos
     </el-menu-item>
-    <el-menu-item index="/three">
+    <el-menu-item index="/threejs">
       Three.js Demos
     </el-menu-item>
 

@@ -139,9 +139,8 @@ function updateValue(data: any) {
 </template>
 
 <route lang="yaml">
-  meta:
-    title: 体积云
-  layout: default
+meta:
+  title: 柏林噪声
 </route>
 
 <style lang="scss" scoped>

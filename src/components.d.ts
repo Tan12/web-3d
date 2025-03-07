@@ -27,5 +27,6 @@ declare module 'vue' {
     MessageBoxDemo: typeof import('./components/MessageBoxDemo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SideMenu: typeof import('./components/layouts/SideMenu.vue')['default']
   }
 }

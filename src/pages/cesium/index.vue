@@ -5,9 +5,9 @@
 </template>
 
 <route lang="yaml">
-  meta:
-    title: Cesium
-  layout: default
+# ！！注意缩进
+meta:
+  title: Cesium
 </route>
 
 <style type="scss" scoped>

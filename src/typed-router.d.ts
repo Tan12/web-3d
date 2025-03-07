@@ -23,5 +23,6 @@ declare module 'vue-router/auto-routes' {
     '/cesium/volume-rendering/cloud': RouteRecordInfo<'/cesium/volume-rendering/cloud', '/cesium/volume-rendering/cloud', Record<never, never>, Record<never, never>>,
     '/cesium/volume-rendering/perlin': RouteRecordInfo<'/cesium/volume-rendering/perlin', '/cesium/volume-rendering/perlin', Record<never, never>, Record<never, never>>,
     '/threejs/': RouteRecordInfo<'/threejs/', '/threejs', Record<never, never>, Record<never, never>>,
+    '/threejs/effects/glow': RouteRecordInfo<'/threejs/effects/glow', '/threejs/effects/glow', Record<never, never>, Record<never, never>>,
   }
 }
